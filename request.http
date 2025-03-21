@@ -1,0 +1,12 @@
+## lugemine
+GET http://localhost:3035/api/tood
+
+### saatmine
+POST http://localhost:3035/api/tood
+Content-Type: application/json
+
+{
+   "nimetus": "Kontaktvormi seadistamine",
+   "prioriteet": "madal",
+   "kasTehtud": true
+}

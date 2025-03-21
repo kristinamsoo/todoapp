@@ -1,0 +1,108 @@
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.logo-area {
+    display: flex;
+}
+
+.logo-image img {
+    display: block;
+    width: 15rem;
+    height: 15rem;
+}
+
+.logo-name {
+    width: 12rem;
+    font-size: 2.0625rem;
+    letter-spacing: 0;
+    color: black;
+    opacity: 2;
+    font-weight: 700;
+    line-height: 10.1rem;
+
+}
+
+.pais-menyy {
+    font-family: 'Montserrat', sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.166rem;
+    margin-left: auto;
+    padding-left: 3rem;
+}
+
+.pais-menyy ul {
+    list-style-type: none;
+    justify-content: flex-end;
+}
+
+.pais-menyy li {
+    padding: 0;
+    margin-left: 0.625rem;
+    min-width: 6.25rem;
+}
+
+.pais-menyy a {
+    color: red;
+    text-decoration: none;
+}
+
+.pealkiri-kastid {
+    padding-top: 2rem;
+    letter-spacing: 0;
+    color: whitesmoke;
+}
+
+.pealkiri-kastid h2 {
+    font-size: 2.4731rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.pealkiri-kastid h1 {
+    font-size: 4.649rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pealkiri-kastid h3 {
+    font-size: 1.301rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.pealkiri-pilt {
+    overflow: hidden;
+}
+
+.pealkiri-pilt .toode {
+    width: 46.875rem;
+    height: 46.875rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -25rem;
+}
+
+
+
+.header-container {
+    background-image: url(./assets/taust.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 48.625rem;
+}
+
+.vasak-paan-valik {
+    cursor: pointer;    
+}
+
+.vasak-paan-valik:hover {
+    background-color: rgb(93, 219, 228);
+}
