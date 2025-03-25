@@ -6,7 +6,10 @@ POST http://localhost:3035/api/tood
 Content-Type: application/json
 
 {
-   "nimetus": "Kontaktvormi seadistamine",
-   "prioriteet": "madal",
+   "nimetus": "Uute andmete 2 sisestamine",
+   "prioriteet": "keskmine",
    "kasTehtud": true
 }
+
+### taski eemaldamine
+DELETE  http://localhost:3035/api/too

@@ -1,5 +1,5 @@
 const adminSisu = document.getElementById('admin-sisu')
-let tood = []
+let tood = [] 
 
 
 async function loeToodeAndmedjaKuvaLeht() {
@@ -53,9 +53,19 @@ function looLeheHTML(tood) {
 
     const paremPaanHtml = `
     <h5>${too.nimetus}</h5>
-    <div>${too.prioriteet}</div>
-    <div>${too.kasTehtud}</div>
-    `
-    paremPaan.innerHTML = paremPaanHtml
+    <div>Prioriteet: ${too.prioriteet}</div>
+    <div>
+        <label>
+            <input type="checkbox" id="tehtud-checkbox" ${too.kasTehtud ? 'checked' : ''}>
+            Tehtud
+        </label>
+    </div>
+`
+paremPaan.innerHTML = paremPaanHtml
+
+    document.getElementById('tehtud-checkbox').addEventListener('change', (event) => {
+    too.kasTehtud = event.target.checked;
+    console.log(`Ülesanne "${too.nimetus}" tehtud olek: ${too.kasTehtud}`)
+})
 }
 loeToodeAndmedjaKuvaLeht()

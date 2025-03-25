@@ -19,25 +19,17 @@
                 <div class="col-lg-6 pealkiri-kastid">
                     <div class="rida">
                         <h2 class="pohi-varv">ToDo</h2>
-                        
                     </div>
                     <div class="rida">
-                        
-
-                </div>
-                <div class="col-lg-6 pealkiri-pilt d-none d-lg-block">
-                   
-                    
+                 </div>
+                <div class="col-lg-6 pealkiri-pilt d-none d-lg-block">                 
                 </div>
             </div>
             <div class="row">
                 <% for (let i = 0; i < tood.length; i++) { %>
-                    <div class="too col-12 col-sm-12 col-lg-12">
-                        <img class="toodepilt" src="<%=tood[i].pildiUrl %>" />
+                    <div class="too col-12 col-sm-12 col-lg-12">                        
                         <h3><%=tood[i].nimetus %></h3>
-                        <p><%=tood[i].kirjeldus %></p>
-                       
-                        
+                        <p><%=tood[i].prioriteet %></p>       
                     </div>
                 <% } %>
             </div>

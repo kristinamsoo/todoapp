@@ -1,42 +1,37 @@
-
-const {loeToodeAndmed, lisaToo : lisaToodeAndmed} = require('../data')
+const { loeToodeAndmed, lisaToodeAndmed} = require("../data");
 
 const tagastaTood = async (req, res) => {
-    const tood = await loeToodeAndmed()
-    res.json(tood)
-}
-
-const lisaToo = (req, res) => {
-    console.log(req.body)
-    lisaToodeAndmed({
-        nimetus: req.body.nimetus,
-        prioriteet: req.body.prioriteet,
-        kasTehtud: true
-    }) 
-    res.status(201).end()
-}
-
-
-async function looToo(req, res) {
-    if (!req.body.nimetus) {
-        res.status(403).end({ error: "nimetus ei tohi olla tühi" });
-        return;
+    try {
+        const tood = await loeToodeAndmed();
+        res.json(tood);
+    } catch (error) {
+        res.status(500).json({ error: "Andmete laadimisel tekkis viga" });
     }
+};
 
-    const too = {
-        nimetus: req.body.nimetus,
-        prioriteet: req.body.prioriteet,
-        kasTehtud: req.body.kasTehtud
-    }
+const lisaToo = async (req, res) => {
+    try {
+        if (!req.body.nimetus) {
+            return res.status(403).json({ error: "Nimetus ei tohi olla tühi" });
+        }
 
-    await lisaToo(too)
-        res.status(201).end()
+        const too = {
+            nimetus: req.body.nimetus,
+            prioriteet: req.body.prioriteet || "madal",
+            kasTehtud: req.body.kasTehtud || false
+        };
+
+        await lisaToodeAndmed(too);
+        res.status(201).json({ message: "Andmed lisatud" })
+    } catch (error) {
+        res.status(500).json({ error: "Andmete lisamisel tekkis viga" });
     }
-    
+};
+
+
+
+
 module.exports = {
     tagastaTood,
-    lisaToo,
-    lisaToodeAndmed,
-    looToo
-
-} 
+    lisaToo
+}
